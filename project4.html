@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .highlight {
+    background-color: rgb(196, 241, 89);
+  }
+</style>
+</head>
+<body>
+
+<div id="highlight">
+  <p>WE have just started THIS section for the USERS (beginner to intermediate) who want to work with various JAVASCRIPT problems and write scripts ONLINE to test their JavaScript skill.</p>
+</div>
+
+<script>
+const div = document.getElementById("highlight");
+const paragraph = div.querySelector("p");
+
+div.addEventListener("mouseover", () => 
+{
+  const words = paragraph.innerText.split(" ");
+  const highlightedWords = words.filter(word => /[A-Z]+/.test(word));
+  paragraph.innerHTML = words.map(word => highlightedWords.includes(word) ? `<span class="highlight">${word}</span>` : word).join(" ");
+});
+
+div.addEventListener("mouseout", () => {
+  paragraph.innerHTML = paragraph.innerText;
+});
+</script>
+
+</body>
+</html>
